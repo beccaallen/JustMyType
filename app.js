@@ -41,13 +41,14 @@ $(document).keypress(function (e) {
   $("#" + e.keyCode).addClass("highlight");
 
   if(letterPosition === 0 && sentenceIndex === 0){
-    setInterval(myTimer, 1000,)
+    setInterval(myTimer, 1000)
   }
   function myTimer (){
     time++
   }
 
-  let keyPressed = String.fromCharCode(e.which);
+  let keyPressed = String.fromCharCode(e.keyCode);
+
 
   if (keyPressed === currentLetter) {
     $("#feedback").append('<span class="glyphicon glyphicon-ok"></span>');
@@ -66,13 +67,12 @@ $(document).keypress(function (e) {
       sentenceIndex++;
       letterPosition = 0;
       currentSentence = sentences[sentenceIndex];
-      currentLetter = currentSentence[letterPosition]
-      currentLetter = currentSentence[letterPosition]
+      currentLetter = currentSentence[letterPosition];
       $("#yellow-block").css({ "margin-left": "0px" });
       $("#target-letter").html(currentLetter);
       $("#sentence").html(currentSentence);
       $("#feedback").empty();
-      console.log(time);
+      // console.log(time);
     }
   }
   
@@ -100,4 +100,4 @@ $(this).keyup(function () {
   $(".highlight").removeClass("highlight");
 });
 
-// console.log(sentences[0].length + sentences[1].length + sentences[2].length + sentences[3].length + sentences[4].length);
+// console.log(sentences[0].length + sentences[1].length + sentences[2].length + sentences[3].length + sentences[4].length);`
