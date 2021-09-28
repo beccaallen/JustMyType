@@ -66,6 +66,8 @@ $(document).keypress(function (e) {
       sentenceIndex++;
       letterPosition = 0;
       currentSentence = sentences[sentenceIndex];
+      currentLetter = currentSentence[letterPosition]
+      currentLetter = currentSentence[letterPosition]
       $("#yellow-block").css({ "margin-left": "0px" });
       $("#target-letter").html(currentLetter);
       $("#sentence").html(currentSentence);
